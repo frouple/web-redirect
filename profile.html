@@ -1,0 +1,22 @@
+<html>
+<head></head>
+<body>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('id');
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      // true for mobile device
+      //window.location.replace('exp://w5fl_2i.ceffiong.19000.exp.direct/--/Message');
+      if (userId) {
+        window.location.replace(`frouple:///CoupleProfile?id=${userId}`);
+      } else {
+        // Fallback if userId is not available
+        window.location.replace('frouple:///Home');
+      }
+    }else{
+      alert("Please open link from a mobile device. Click OK to visit Frouple landing page.")
+      window.location.replace('https://frouple.com');
+    }
+</script>
+</body>
+</html>
